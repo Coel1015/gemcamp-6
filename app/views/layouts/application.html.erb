@@ -8,9 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <link rel="icon" href=
+      "https://upload.wikimedia.org/wikipedia/en/9/91/The_1975_-_I_Like_It_When_You_Sleep%2C_for_You_Are_So_Beautiful_Yet_So_Unaware_of_It.png"
+          type="image/x-icon">
   </head>
 
   <body>
+    <%= render partial: "welcome/header" %>
     <%= yield %>
   </body>
 </html>

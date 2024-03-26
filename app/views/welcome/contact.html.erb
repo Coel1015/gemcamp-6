@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+  <style>
+      /* Basic navigation bar styles (optional) */
+      nav {
+          background-color: #eee;
+          padding: 10px;
+      }
+
+      .nav-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex; /* For horizontal alignment */
+      }
+
+      .nav-item {
+          margin-right: 15px; /* Adjust spacing between items */
+      }
+
+      .nav-link {
+          text-decoration: none;
+          color: #333;
+          padding: 5px 10px;
+      }
+
+      /* Styling for the active link */
+      .nav-link.active {
+          font-weight: bold;
+          color: #007bff; /* Adjust active link color */
+      }
+
+  </style>
+
+</head>
+<body>
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="index.html" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="about.html" class="nav-link">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="contact.html" class="nav-link">Contact</a>
+    </li>
+  </ul>
+</nav>
+<script>
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Get the current page URL without query string or hash fragment
+    const currentPage = window.location.pathname.split('?')[0].split('#')[0];
+
+    navLinks.forEach(link => {
+        // Check if the link's href attribute matches the current page
+        if (link.href.endsWith(currentPage)) {
+            link.classList.add('active');
+        }
+    });
+
+</script>
+</body>
+</html>
