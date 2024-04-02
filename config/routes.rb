@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'welcome#contact'
   get 'about', to: 'welcome#about'
   get 'portfolio', to: 'welcome#portfolio'
-  get 'index', to: 'posts#index'
+  get 'posts', to: 'posts#index'
+  get 'posts/new', to: 'posts#new'
   # root 'welcome#index'
   #
   resources :posts
