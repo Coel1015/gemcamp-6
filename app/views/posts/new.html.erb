@@ -1,6 +1,19 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+
+
 <h1>New Post</h1>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+
+
+<% if @post.errors.any? %>
+     <ul>
+       <% @post.errors.each do |error| %>
+           <li><%= error.full_message %></li>
+         <% end %>
+     </ul>
+   <% end %>
+
+
 <div class="class=container mt-5 pt-5">
 <%= form_with model: @post do |form| %>
   <div>
@@ -45,3 +58,7 @@
     </div>
   </div>
 </section>
+
+
+
+<%= link_to 'Index', posts_path %>

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'portfolio', to: 'welcome#portfolio'
   get 'posts', to: 'posts#index'
   get 'posts/new', to: 'posts#new'
+  get 'post/edit', to: 'post#edit'
+  get 'post/show', to: 'post#show'
   # root 'welcome#index'
   #
   resources :posts
