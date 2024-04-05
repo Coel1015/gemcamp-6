@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   get 'posts/new', to: 'posts#new'
   get 'post/edit', to: 'post#edit'
   get 'post/show', to: 'post#show'
+
   # root 'welcome#index'
   #
-  resources :posts
+  resources :posts do
+    resources :comments, except: :show
+  end
 end
